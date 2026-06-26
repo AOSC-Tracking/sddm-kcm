@@ -14,7 +14,6 @@ import QtQuick.Window 2.15
 
 import org.kde.kcmutils as KCM
 import org.kde.kirigami as Kirigami
-import org.kde.newstuff 1.81 as NewStuff
 import org.kde.private.kcms.sddm 1.0
 
 KCM.GridViewKCM {
@@ -34,13 +33,6 @@ KCM.GridViewKCM {
             text: i18nc("@action:button", "Install From File…")
             icon.name: "document-import"
             onTriggered: themeDialog.open()
-        },
-        NewStuff.Action {
-            text: i18nc("@action:button as in, \"get new SDDM themes\"", "Get New…")
-            configFile: "sddmtheme.knsrc"
-            onEntryEvent: function(entry, event) {
-                kcm.themesModel.populate();
-            }
         }
     ]
 
